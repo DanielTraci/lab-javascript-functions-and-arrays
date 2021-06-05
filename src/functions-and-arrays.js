@@ -10,7 +10,7 @@ function maxOfTwoNumbers (x, y) {
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 function findLongestWord(someArr) {
-  let longestWord = " ";
+  let longestWord = " "; 
   if (someArr.length==0){
     return null
   }
@@ -61,11 +61,16 @@ function averageNumbers(avNumero){
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
-function averageWordLength (avWL) {
-  if (avWL.length==' ') {
-    return null
+function averageWordLength(wordsArr) {
+  let average = 0; 
+  if (wordsArr.length === 0) {
+    return null; 
   }
-
+  for (let i = 0; i < wordsArr.length; i++) {
+    average += wordsArr[i].length;
+  }
+  average = average / wordsArr.length; 
+  return average; 
 }
 
 // Bonus: Calculate the average of a mixed elements array
@@ -89,11 +94,18 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
-function uniquifyArray (someArr) {
-  let unique = "";
-  if (someArr.length==0){
-    return null
+function uniquifyArray(arr) {
+  const uniqueArr = []; 
+  if (arr.length === 0) {
+    return null;
   }
+  for (let i = 0; i < arr.length; i++) {
+    let word = arr[i];
+    if (uniqueArr.indexOf(word) < 0) {
+      uniqueArr.push(word);
+    }
+  }
+  return uniqueArr; 
 }
 
 
@@ -103,7 +115,7 @@ function doesWordExist (words, thisWord) {
   if (words.length == ' ') {
     return null
   }
-
+  return words.includes(thisWord)
 }
 
 
@@ -122,10 +134,17 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
-function howManyTimes (times) {
-  if (times.length==0){
-    return 0
+function howManyTimes(arr, wordToSearch) {
+  if (arr.length === 0) {
+    return 0;
   }
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === wordToSearch) {
+      count++;
+    }
+  }
+  return count;
 }
 
 // Iteration #8: Bonus
